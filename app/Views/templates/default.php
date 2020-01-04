@@ -46,7 +46,7 @@
 
     <section class="section">
       <div class="container-fluid">
-        <?= $content; ?>
+        <?= utf8_encode($content); ?>
     </section>
   </body>
 </html>

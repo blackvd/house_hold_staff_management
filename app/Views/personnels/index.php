@@ -2,16 +2,17 @@
 
 <div class="tabs is-centered">
   <ul>
-    <li class="is-active"><a>Toutes les catégories</a></li>
+    <li class="is-active"><a href="index.php?p=personnels.index">Toutes les cat&eacute;gories</a></li>
     <?php foreach ($categories as $categorie): ?>
       <li><a href="<?= $categorie->url; ?>"><?= $categorie->libelle; ?></a></li>
     <?php endforeach; ?>
   </ul>
 </div>
 
+<div class="container">
 <div class="columns">
   <?php foreach ($personnels as $personnel): ?>
-    <div class="column is-2">
+    <div class="column is-3">
       <div class="card">
         <div class="card-image">
           <figure class="image is-4by3">
@@ -58,6 +59,7 @@
       </div>
     </div>
   <?php endforeach; ?>
+</div>
 </div>
 <script>
   function activeModal(){

@@ -12,7 +12,7 @@ class PersonnelModel extends Model{
       SELECT *
       FROM personnels
       INNER JOIN appartenir
-      ON personnels.id = appatenir.id_personnel
+      ON personnels.id = appartenir.id_personnel
       WHERE appartenir.id_categorie = ?
       ORDER BY personnels.date_ajout DESC
     ", [$category_id]);
