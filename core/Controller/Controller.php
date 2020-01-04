@@ -14,4 +14,14 @@ class Controller{
     require($this->viewPath . 'templates/'.$this->template.'.php');
   }
 
+  protected function connectBefore(){
+    header('Location:index.php?p=clients.login');
+    exit;
+  }
+
+  protected function notFound(){
+    header('Location:notFound.php');
+    exit;
+  }
+
 }

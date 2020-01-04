@@ -9,54 +9,40 @@
   </head>
   <body>
 
-  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="/">Gestion de placement</a>
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item">
-          Accueil
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.php">Gestion de placement</a>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </a>
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.php">
+            Accueil
+          </a>
+          <a class="navbar-item" href="?p=personnels.index">
             Personnels
           </a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
-              Tout voir
-            </a>
-            <a class="navbar-item">
-              cat1
-            </a>
-            <a class="navbar-item">
-              cat2
-            </a>
-            <a class="navbar-item">
-              cat3
-            </a>
+        </div>
+        <!-- afficher options de connexion si non connecté -->
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary">
+                <strong>Se connecter</strong>
+              </a>
+              <a class="button is-light">
+                S'inscrire
+              </a>
+            </div>
           </div>
         </div>
+        <!-- afficher options de profil et de deconnexion si connecté -->
       </div>
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary">
-              <strong>Se connecter</strong>
-            </a>
-            <a class="button is-light">
-              S'inscrire
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
     <section class="section">
       <div class="container-fluid">

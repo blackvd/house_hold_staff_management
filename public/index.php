@@ -7,7 +7,7 @@ App::load();
 if(isset($_GET['p'])){
   $page = $_GET['p'];
 }else{
-  $page = 'personnels.index';
+  $page = 'personnels.home';
 }
 
 $page = explode('.', $page);
