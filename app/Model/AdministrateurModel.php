@@ -5,6 +5,6 @@ use Core\Model\Model;
 
 class AdministrateurModel extends Model{
 
-  protected $table = 'Administrateurs';
+  protected $table = 'administrateurs';
 
 }

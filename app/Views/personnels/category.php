@@ -16,7 +16,6 @@
         Personnels
       </a>
     </div>
-    <!-- afficher options de connexion si non connecté -->
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
@@ -29,7 +28,6 @@
         </div>
       </div>
     </div>
-    <!-- afficher options de profil et de deconnexion si connecté -->
   </div>
 </nav>
 

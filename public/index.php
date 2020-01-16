@@ -12,7 +12,7 @@ if(isset($_GET['p'])){
 
 $page = explode('.', $page);
 if($page[0] == 'admin'){
-  $controller = '\app\Controller\Admin\\' . ucfirst($page[1]) . 'controller';
+  $controller = '\App\Controller\Admin\\' . ucfirst($page[1]) . 'Controller';
   $action = $page[2];
 }
 else if($page[0] == 'user'){

@@ -7,18 +7,12 @@ use Core\HTML\BulmaForm;
 
 class AdministrateursController extends AppController{
 
-  public function __construct()
-  {
-    parent::__construct();
-    $this->loadModel('Administrateur');
-  }
-
   public function login(){
     $errors = false;
     if(!empty($_POST)){
       $auth = new DbAuth(App::getInstance()->getDb());
       if($auth->loginAsAdmin($_POST['username'], $_POST['password'])){
-        header('Location: index.php?p=admin.dashboard.php');
+        header('Location: index.php?p=admin.dashboard.index');
       } else {
           $errors = true;
       }

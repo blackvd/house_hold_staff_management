@@ -29,7 +29,7 @@ class DbAuth{
   }
 
   public function loginAsAdmin($username, $password){
-    $admin = $this->db->prepare("SELECT * FROM administrateurs WHERE pseudo=?"[$username], null, true);
+    $admin = $this->db->prepare("SELECT * FROM administrateurs WHERE pseudo=?",[$username], null, true);
     if($admin){
       if($admin->password === sha1($password)){
         $_SESSION['auth'] = $admin->id;
