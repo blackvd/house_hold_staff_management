@@ -36,68 +36,72 @@
 
     <h1 class="title is-1">Liste du personnel</h1>
 
-    <div class="tabs is-centered">
-      <ul>
-        <li class="is-active"><a href="index.php?p=personnels.index">Toutes les cat&eacute;gories</a></li>
-        <?php foreach ($categories as $categorie): ?>
-          <li><a href="<?= $categorie->url; ?>"><?= $categorie->libelle; ?></a></li>
-        <?php endforeach; ?>
-      </ul>
-    </div>
-
-    <div class="container">
     <div class="columns">
-      <?php foreach ($personnels as $personnel): ?>
-        <div class="column is-3">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="media">
-                <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+      <div class="column is-2">
+        <h1 class="title is-4">Cat&eacute;gories</h1>
+        <div class="list is-hoverable">
+          <a href="index.php?p=personnels.index" class="list-item">Toutes les cat&eacute;gories</a>
+          <?php foreach($categories as $categorie): ?>
+            <a href="<?= $categorie->url; ?>" class="list-item"><?= $categorie->libelle; ?></a>
+          <?php endforeach; ?>
+        </div>
+      </div>
+      <div class="column is-10">
+      <div class="container">
+        <div class="columns">
+          <?php foreach ($personnels as $personnel): ?>
+            <div class="column is-3">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                   </figure>
                 </div>
-                <div class="media-content">
-                  <p class="title is-4"><?= $personnel->nom ?></p>
-                  <p class="subtitle is-6"><?= $personnel->prenoms ?></p>
-                </div>
-              </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4"><?= $personnel->nom ?></p>
+                      <p class="subtitle is-6"><?= $personnel->prenoms ?></p>
+                    </div>
+                  </div>
 
-              <div class="content">
-                <?= $personnel->description; ?>
+                  <div class="content">
+                    <?= $personnel->description; ?>
+                  </div>
+                </div>
+                <footer class="card-footer">
+                  <a href="#" id="modalLink" class="card-footer-item" data-toggle="modal" aria-haspopup="true" onclick="activeModal()">En savoir plus...</a>
+                  <div id="modal" class="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-card">
+                      <header class="modal-card-head">
+                        <p class="modal-card-title">Avertissement</p>
+                        <button class="delete" aria-label="close" onclick="deactivateModal()">
+                          ::before
+                          ::after
+                        </button>
+                      </header>
+                      <section class="modal-card-body">Veuillez-vous connecter !!!</section>
+                      <footer class="modal-card-foot">
+                        <a href="index.php?p=clients.login" class="button is-success">Se connecter</a>
+                        <button class="button" onclick="deactivateModal()">Annuler</button>
+                      </footer>
+                    </div>
+                  </div>
+                </footer>
               </div>
             </div>
-            <footer class="card-footer">
-              <a href="#" id="modalLink" class="card-footer-item" data-toggle="modal" aria-haspopup="true" onclick="activeModal()">En savoir plus...</a>
-              <div id="modal" class="modal">
-                <div class="modal-background"></div>
-                <div class="modal-card">
-                  <header class="modal-card-head">
-                    <p class="modal-card-title">Avertissement</p>
-                    <button class="delete" aria-label="close" onclick="deactivateModal()">
-                      ::before
-                      ::after
-                    </button>
-                  </header>
-                  <section class="modal-card-body">Veuillez-vous connecter !!!</section>
-                  <footer class="modal-card-foot">
-                    <a href="index.php?p=clients.login" class="button is-success">Se connecter</a>
-                    <button class="button" onclick="deactivateModal()">Annuler</button>
-                  </footer>
-                </div>
-              </div>
-            </footer>
-          </div>
+          <?php endforeach; ?>
         </div>
-      <?php endforeach; ?>
+        </div>
+      </div>
+      </div>
     </div>
-    </div>
-  </div>
 </section>
 <script>
   function activeModal(){

@@ -2,23 +2,17 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <div class="column is-4 is-offset-4">
-        <h3 class="title has-text-black">Nouveau Client</h3>
+        <h3 class="title has-text-black">Administration</h3>
         <hr class="login-hr">
         <div class="box">
           <figure class="avatar">
               <img src="https://placehold.it/128x128">
           </figure>
           <form method="post">
-            <?= $form->input('nom', 'Nom'); ?>
-            <?= $form->input('prenoms', 'Prenoms'); ?>
-            <?= $form->input('contact', 'Contact', ['type' => 'tel']); ?>
-            <?= $form->input('email', 'Email', ['email']); ?>
-            <?= $form->input('lieu_habitation', 'Lieu d\'Habitation'); ?>
+            <?= $form->input('username', 'Adminstrateur'); ?>
+            <?= $form->input('password', 'Mot de passe', ['type' => 'password']); ?>
             <div class="buttons">
-              <button type="submit" class="button is-block is-primary is-normal is-fullwidth">S'enregistrer</button>
-            </div>
-            <div>
-              <a href="index.php?p=clients.login" class="is-link">D&eacute;j&agrave; un compte ?</a>
+              <button type="submit" class="button is-block is-primary is-normal is-fullwidth">Connexion</button>
             </div>
             <a href="index.php" class="is-link">Retour</a>
           </form>
