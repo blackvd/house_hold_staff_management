@@ -16,12 +16,10 @@ class Controller{
 
   protected function connectBefore(){
     header('Location:index.php?p=clients.login');
-    exit;
   }
 
   protected function notFound(){
     header('Location:notFound.php');
-    exit;
   }
 
 }

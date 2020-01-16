@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller\Client;
+namespace App\Controller\User;
 
 use App;
 use App\Controller\AppController as ControllerAppController;

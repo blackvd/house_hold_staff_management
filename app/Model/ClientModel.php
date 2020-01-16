@@ -5,4 +5,15 @@ use Core\Model\Model;
 
 class ClientModel extends Model{
   
+  protected $table = "clients";
+
+  public function getLastClient(){
+    return $this->query("
+      SELECT no_client
+      FROM clients
+      ORDER BY id DESC
+      LIMIT 1
+    ", null, true);
+  }
+
 }
