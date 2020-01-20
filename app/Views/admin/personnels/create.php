@@ -11,8 +11,9 @@
             <?= $form->select('sexe', 'Sexe', ['Feminin', 'Masculin']); ?>
             <?= $form->input('date_naiss', 'Date de naissance', ['type' => 'date']) ?>
             <?= $form->input('contact', 'Contact', ['type' => 'tel']) ?>
-            <?= $form->select('sexe', 'Sexe', ['CNI', 'Attestion d\'identité', 'Passeport', 'Autre']); ?>
-            <?= $form->input('', 'Contact', ['type' => 'tel']) ?>
+            <?= $form->select('type_piece', 'Type de pi&egrave;ce', ['CNI', 'Attestion d\'identité', 'Passeport', 'Autre']); ?>
+            <?= $form->input('piece_identite', 'Num&eacute;ro de la pi&egrave;ce'); ?>
+            <?= $form->input('description', 'Description', ['type' => 'textarea']); ?>
           </form>
         </div>
       </div>

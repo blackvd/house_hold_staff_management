@@ -23,7 +23,7 @@ class BulmaForm extends Form{
 
   public function select($name, $label, $options){
     $label = '<label class="label">'. $label .'</label>';
-    $input = '<div class="control"><div class="select"><select name="'.$name.'">';
+    $input = '<div class="control"><div class="select is-fullwidth"><select name="'.$name.'">';
     foreach ($options as $k => $v) {
       $attr = '';
       if($k == $this->getValue($name)){
