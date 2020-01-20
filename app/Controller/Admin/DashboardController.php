@@ -7,11 +7,17 @@ class DashboardController extends AppController{
   {
     parent::__construct();
     $this->loadModel('Personnel');
-    $this->loadModel('Category');
+    $this->loadModel('Categorie');
+    $this->loadModel('Client');
+    $this->loadModel('Reservation');
   }
 
   public function index(){
-
+    $personnels = $this->Personnel->listOnlyTenPersonnel();
+    $categories = $this->Categorie->listOnlyTenCategorie();
+    $clients = $this->Client->listOnlyTenClient();
+    $reservations = $this->Reservation->getRes(10);
+    $this->render('admin.dashboard.index', compact('personnels', 'categories', 'clients', 'reservations'));
   }
 
 }

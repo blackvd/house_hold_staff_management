@@ -18,4 +18,13 @@ class PersonnelModel extends Model{
     ", [$category_id]);
   }
 
+  public function listOnlyTenPersonnel(){
+    return $this->query("
+      SELECT *
+      FROM personnels
+      ORDER BY id DESC
+      LIMIT 10
+    ");
+  }
+
 }

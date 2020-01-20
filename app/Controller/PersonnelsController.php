@@ -7,7 +7,7 @@ class PersonnelsController extends AppController{
   {
     parent::__construct();
     $this->loadModel('Personnel');
-    $this->loadModel('Category');
+    $this->loadModel('Categorie');
   }
 
   public function home(){
@@ -16,18 +16,18 @@ class PersonnelsController extends AppController{
 
   public function index(){
     $personnels = $this->Personnel->all();
-    $categories = $this->Category->all();
+    $categories = $this->Categorie->all();
     $this->render('personnels.index', compact('personnels', 'categories'));
   }
 
-  public function category(){
-    $categorie = $this->Category->find($_GET['id']);
+  public function categorie(){
+    $categorie = $this->Categorie->find($_GET['id']);
     if($categorie === false){
       $this->notFound();
     }
     $personnels = $this->Personnel->listByCategory($_GET['id']);
-    $categories = $this->Category->all();
-    $this->render('personnels.category', compact('personnels', 'categories', 'categorie'));
+    $categories = $this->Categorie->all();
+    $this->render('personnels.categorie', compact('personnels', 'categories', 'categorie'));
   }
 
 }

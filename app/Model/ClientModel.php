@@ -16,4 +16,21 @@ class ClientModel extends Model{
     ", null, true);
   }
 
+  // public function getClient(){
+  //   return $this->query("
+  //     SELECT clients.nom
+  //     FROM clients, reservation
+  //     WHERE reservation.id_client = clients.id
+  //   ");
+  // }
+
+  public function listOnlyTenClient(){
+    return $this->query("
+      SELECT *
+      FROM clients
+      ORDER BY id DESC
+      LIMIT 10
+    ");
+  }
+
 }

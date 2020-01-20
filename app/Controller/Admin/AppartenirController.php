@@ -1,18 +1,18 @@
 <?php
 namespace App\Controller\Admin;
 
-class CategoriesController extends AppController{
+class AppartenirController extends AppController{
 
   public function __construct()
   {
     parent::__construct();
-    $this->loadModel('Categorie');
+    $this->loadModel('Appartenir');
   }
 
   public function index()
   {
-    $categories = $this->Categorie->all();
-    $this->render('admin.categories.index', compact('categories'));
+    $appartenir = $this->Appartenir->getMoreInfoFromAppart();
+    $this->render('admin.appartenir.index', compact('appartenir'));
   }
 
   public function create()

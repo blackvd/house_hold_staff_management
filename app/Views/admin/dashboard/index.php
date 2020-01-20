@@ -83,27 +83,98 @@
         <div class="column is-6">
           <div class="card">
             <div class="card-header"><h5 class="title is-5">Personnels</h5></div>
+            <div class="card-body">
+              <table class="table is-narrow is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Nom</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach($personnels as $personnel): ?>
+                    <tr>
+                      <td><?= $personnel->nom; ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
             <div class="card-footer"><a href="?p=admin.personnels.index">Voir plus</a></div>
           </div>
         </div>
+        
         <div class="column is-6">
           <div class="card">
             <div class="card-header"><h5 class="title is-5">Clients</h5></div>
-            <div class="card-footer"><a href="#">Voir plus</a></div>
+            <div class="card-body">
+              <table class="table is-narrow is-hoverable is-fullwidth">
+              <thead>
+                  <tr>
+                    <th>Nom</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach($clients as $client): ?>
+                    <tr>
+                      <td><?= $client->nom; ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+
+
+              </table>
+            </div>
+            <div class="card-footer"><a href="?p=admin.clients.index">Voir plus</a></div>
           </div>
         </div>
       </div>
+      
       <div class="columns">
         <div class="column is-6">
           <div class="card">
+
             <div class="card-header"><h5 class="title is-5">Cat&eacute;gories</h5></div>
-            <div class="card-footer"><a href="#">Voir plus</a></div>
+            <table class="table is-narrow is-hoverable is-fullwidth">
+              <thead>
+                  <tr>
+                    <th>Libell&eacute;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach($categories as $categorie): ?>
+                    <tr>
+                      <td><?= $categorie->libelle; ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+
+
+              </table>
+            <div class="card-footer"><a href="?p=admin.categories.index">Voir plus</a></div>
           </div>
+
         </div>
+        
         <div class="column is-6">
           <div class="card">
             <div class="card-header"><h5 class="title is-5">R&eacute;servations</h5></div>
-            <div class="card-footer"><a href="#">Voir plus</a></div>
+            <table class="table is-narrow is-hoverable is-fullwidth">
+              <thead>
+                  <tr>
+                    <th>Co&ucirc;t</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach($reservations as $reservation): ?>
+                    <tr>
+                      <td><?= $reservation->cout_reservation; ?> FCFA </td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+
+
+              </table>
+            <div class="card-footer"><a href="?p=admin.reservations.index">Voir plus</a></div>
           </div>
         </div>
       </div>

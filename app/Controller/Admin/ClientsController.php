@@ -1,18 +1,18 @@
 <?php
 namespace App\Controller\Admin;
 
-class CategoriesController extends AppController{
+class ClientsController extends AppController{
 
   public function __construct()
   {
     parent::__construct();
-    $this->loadModel('Categorie');
+    $this->loadModel('Client');
   }
 
   public function index()
   {
-    $categories = $this->Categorie->all();
-    $this->render('admin.categories.index', compact('categories'));
+    $clients = $this->Client->all();
+    $this->render('admin.clients.index', compact('clients'));
   }
 
   public function create()

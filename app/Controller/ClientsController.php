@@ -54,7 +54,7 @@ class ClientsController extends AppController{
   }
 
   public function destroySession(){
-    session_destroy();
+    
     header('Location:index.php');
   }
 

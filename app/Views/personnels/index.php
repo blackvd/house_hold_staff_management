@@ -34,8 +34,6 @@
 <section class="section">
   <div class="container-fluid">
 
-    <h1 class="title is-1">Liste du personnel</h1>
-
     <div class="columns">
       <div class="column is-2">
         <h1 class="title is-4">Cat&eacute;gories</h1>
@@ -48,6 +46,7 @@
       </div>
       <div class="column is-10">
       <div class="container">
+      <h1 class="title is-1 has-text-centered">Liste du personnel</h1>
         <div class="columns">
           <?php foreach ($personnels as $personnel): ?>
             <div class="column is-3">

@@ -67,7 +67,7 @@
       </table>
     </div>
     <div class="card-footer">
-      <a href="#" class="button is-primary is-outlined" style="margin: auto"><i class="fas fa-plus"></i> Ajouter</a>
+      <a href="?p=admin.personnels.create" class="button is-primary is-outlined" style="margin: auto"><i class="fas fa-plus"></i> Ajouter</a>
     </div>
   </div>
 </section>

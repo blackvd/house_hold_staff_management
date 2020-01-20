@@ -1,18 +1,18 @@
 <?php
 namespace App\Controller\Admin;
 
-class CategoriesController extends AppController{
+class ExperiencesController extends AppController{
 
   public function __construct()
   {
     parent::__construct();
-    $this->loadModel('Categorie');
+    $this->loadModel('Experience');
   }
 
   public function index()
   {
-    $categories = $this->Categorie->all();
-    $this->render('admin.categories.index', compact('categories'));
+    $experiences = $this->Experience->getSpecificExp();
+    $this->render('admin.experiences.index', compact('experiences'));
   }
 
   public function create()

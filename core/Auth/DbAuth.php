@@ -43,4 +43,8 @@ class DbAuth{
     return isset($_SESSION['auth']);
   }
 
+  public function unlogged(){
+    return $_SESSION['auth'] = null;
+  }
+
 }

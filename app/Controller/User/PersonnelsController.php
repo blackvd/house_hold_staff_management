@@ -11,7 +11,9 @@ class PersonnelsController extends AppController{
   }
 
   public function index(){
-
+    $personnels = $this->Personnel->all();
+    $categories = $this->Category->all();
+    $this->render('user.personnels.index', compact('personnels', 'categories'));
   }
 
   public function category(){

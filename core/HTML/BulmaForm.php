@@ -23,13 +23,13 @@ class BulmaForm extends Form{
 
   public function select($name, $label, $options){
     $label = '<label class="label">'. $label .'</label>';
-    $input = '<div class="control"><div class="select><select name="'.$name.'">';
+    $input = '<div class="control"><div class="select"><select name="'.$name.'">';
     foreach ($options as $k => $v) {
       $attr = '';
       if($k == $this->getValue($name)){
         $attr = ' selected';
       }
-      $input .= "<option value='$k'$attr>$v</option>" ;
+      $input .= "<option value='$v'$attr>$v</option>" ;
     }
     $input .= '</select></div></div>';
     return $this->surround($label . $input);

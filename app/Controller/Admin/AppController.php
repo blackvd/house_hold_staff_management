@@ -14,7 +14,7 @@ class AppController extends ControllerAppController{
     $app = App::getInstance();
     $auth = new DbAuth($app->getDb());
     if(!$auth->logged()){
-      $this->connectBefore();
+      $this->connectAsAdminBefore();
     }
   }
 
