@@ -63,6 +63,10 @@ class Model
     return $this->query("DELETE FROM {$this->table} WHERE id=?", [$id], true);
   }
 
+  public function countElt(){
+    return $this->query("SELECT COUNT(*) AS nbreElt FROM {$this->table}", null, true );
+  }
+
   public function query($statement, $attr = null, $one = false){
     if($attr){
       return $this->db->prepare($statement, $attr, str_replace('Model', 'Entity', get_class($this)), $one);

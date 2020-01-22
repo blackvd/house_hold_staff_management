@@ -11,7 +11,7 @@ class BulmaForm extends Form{
     $type = isset($options['type']) ? $options['type'] : 'text';
     $label = '<label class="label">'. $label .'</label>';
     if($type === 'textarea'){
-      $input = '<div class="control"><textarea class="textarea" required>'. $this->getValue($name) .'</textarea></div>';
+      $input = '<div class="control"><textarea name="'.$name.'" class="textarea">'. $this->getValue($name) .'</textarea></div>';
     }elseif($type === 'tel'){
       $input = '<div class="control"><input class="input" type="tel" name="'.$name.'" value="'.$this->getValue($name).'" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" required/></div>';
     }

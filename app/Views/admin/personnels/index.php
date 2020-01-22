@@ -58,8 +58,11 @@
               <td><?= $personnel->piece_identite; ?></td>
               <td>
                 <a href="#" class="button is-info is-outlined"><i class="fas fa-eye"></i></a>
-                <a href="#" class="button is-warning is-outlined"><i class="fas fa-edit"></i></a>
-                <a href="#" class="button is-danger is-outlined"><i class="fas fa-trash"></i></a>
+                <a href="?p=admin.personnels.edit&id=<?= $personnel->id; ?>" class="button is-warning is-outlined"><i class="fas fa-edit"></i></a>
+                <form action="?p=admin.personnels.delete" method="post" style="display: inline;">
+                  <input type="hidden" name="id" value="<?= $personnel->id; ?>">
+                  <button type="submit" href="?p=admin.personnels.delete&id=<?= $personnel->id; ?>" class="button is-danger is-outlined"><i class="fas fa-trash"></i></button>
+                </form>
               </td>
             </tr>
           <?php endforeach; ?>

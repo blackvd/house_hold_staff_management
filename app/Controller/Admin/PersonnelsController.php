@@ -47,11 +47,34 @@ class PersonnelsController extends AppController{
   public function edit()
   {
 
+    if(!empty($_POST)){
+      $result = $this->Personnel->update($_GET['id'], [
+        'nom' => $_POST['nom'],
+        'prenoms' => $_POST['prenoms'],
+        'sexe' => $_POST['sexe'],
+        'date_naiss' => $_POST['date_naiss'],
+        'contact' => $_POST['contact'],
+        'type_piece' => $_POST['type_piece'],
+        'piece_identite' => $_POST['piece_identite'],
+        'description' => $_POST['description']
+      ]
+      );
+      if($result){
+        return $this->index();
+      }
+    }
+    $personnel = $this->Personnel->find($_GET['id']);
+    $form = new BulmaForm($personnel);
+    $this->render('admin.personnels.edit', compact('form'));
+
   }
 
   public function delete()
   {
-
+    if(!empty($_POST)){
+      $result = $this->Personnel->delete($_POST['id']);
+      return $this->index();
+    }
   }
 
 }

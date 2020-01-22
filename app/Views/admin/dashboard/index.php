@@ -57,19 +57,19 @@
         <div class="level-item has-text-centered">
           <div>
             <p class="heading">Personnels</p>
-            <p class="title">3,456</p>
+            <p class="title"><?= $nbrePersonnels->nbreElt; ?></p>
           </div>
         </div>
         <div class="level-item has-text-centered">
           <div>
             <p class="heading">Clients</p>
-            <p class="title">123</p>
+            <p class="title"><?= $nbreClients->nbreElt; ?></p>
           </div>
         </div>
         <div class="level-item has-text-centered">
           <div>
             <p class="heading">R&eacute;servations</p>
-            <p class="title">456K</p>
+            <p class="title"><?= $nbreRes->nbreElt; ?></p>
           </div>
         </div>
       </nav>

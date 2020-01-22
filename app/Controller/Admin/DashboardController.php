@@ -17,7 +17,11 @@ class DashboardController extends AppController{
     $categories = $this->Categorie->listOnlyTenCategorie();
     $clients = $this->Client->listOnlyTenClient();
     $reservations = $this->Reservation->getRes(10);
-    $this->render('admin.dashboard.index', compact('personnels', 'categories', 'clients', 'reservations'));
+    $nbrePersonnels = $this->Personnel->countElt();
+    $nbreClients = $this->Client->countElt();
+    $nbreRes = $this->Reservation->countElt();
+    $this->render('admin.dashboard.index', compact(
+      'personnels', 'categories', 'clients', 'reservations', 'nbrePersonnels', 'nbreClients', 'nbreRes'));
   }
 
 }
