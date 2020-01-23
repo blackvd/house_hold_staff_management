@@ -15,19 +15,13 @@ class ClientsController extends AppController{
     $this->render('admin.clients.index', compact('clients'));
   }
 
-  public function create()
-  {
-
-  }
-
-  public function edit()
-  {
-
-  }
 
   public function delete()
   {
-
+    if(!empty($_POST)){
+      $result = $this->Client->delete($_POST['id']);
+      return $this->index();
+    }
   }
 
 }

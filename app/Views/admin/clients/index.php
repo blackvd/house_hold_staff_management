@@ -54,8 +54,10 @@
               <td><?= utf8_decode($client->lieu_habitation); ?></td>
               <td>
                 <a href="#" class="button is-info is-outlined"><i class="fas fa-eye"></i></a>
-                <a href="#" class="button is-warning is-outlined"><i class="fas fa-edit"></i></a>
-                <a href="#" class="button is-danger is-outlined"><i class="fas fa-trash"></i></a>
+                <form action="?p=admin.clients.delete" method="post" style="display: inline;">
+                  <input type="hidden" name="id" value="<?= $client->id; ?>">
+                  <button type="submit" href="?p=admin.clients.delete&id=<?= $client->id; ?>" class="button is-danger is-outlined"><i class="fas fa-trash"></i></button>
+                </form>
               </td>
             </tr>
           <?php endforeach; ?>

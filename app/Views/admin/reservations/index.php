@@ -40,6 +40,7 @@
             <th>Nom client</th>
             <th>Cat&eacute;gorie</th>
             <th>Nom et Pr&eacute;nom du personnel</th>
+            <th>&Eacute;tat de la r&eacute;servation</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -65,17 +66,23 @@
                 <?= $reservation->nom_personnel ." ". $reservation->prenoms_personnel; ?>
               </td>
               <td>
+                <?= $reservation->etat; ?>
+              </td>
+              <td>
                 <a href="#" class="button is-info is-outlined"><i class="fas fa-eye"></i></a>
-                <a href="#" class="button is-warning is-outlined"><i class="fas fa-edit"></i></a>
+                <form action="?p=admin.reservation.validate" method="post">
+                  <div class="field">
+                    <input id="etat" type="checkbox" name="etat" class="switch is-rounded is-success" checked="<?= $reservation->etat === true ? 'checked' : ''  ?>">
+                    <label for="name">Confirmer la réservation</label></label>
+                    <button type="submit" href="?p=admin.reservations.validate&id=<?= $reservation->id; ?>" class="button is-warning is-outlined"><i class="fas fa-send"></i></button>
+                  </div>
+                </form>
                 <a href="#" class="button is-danger is-outlined"><i class="fas fa-trash"></i></a>
               </td>
             </tr>
           <?php endforeach; ?>
         </tbody>
       </table>
-    </div>
-    <div class="card-footer">
-      <a href="#" class="button is-primary is-outlined" style="margin: auto"><i class="fas fa-plus"></i> Ajouter</a>
     </div>
   </div>
 </section>

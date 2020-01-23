@@ -51,6 +51,7 @@ class PersonnelsController extends AppController{
       $result = $this->Personnel->update($_GET['id'], [
         'nom' => $_POST['nom'],
         'prenoms' => $_POST['prenoms'],
+        'nom_complet' => $_POST['nom'].' '.$_POST['prenoms'],
         'sexe' => $_POST['sexe'],
         'date_naiss' => $_POST['date_naiss'],
         'contact' => $_POST['contact'],

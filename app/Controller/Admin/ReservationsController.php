@@ -16,14 +16,16 @@ class ReservationsController extends AppController{
     $this->render('admin.reservations.index', compact('reservations'));
   }
 
-  public function create()
+  public function validate()
   {
-
-  }
-
-  public function edit()
-  {
-
+    if(!empty($_POST)){
+      $result = $this->Appartenir->update($_GET['id'],[
+        'etat' => $_POST['etat']
+      ]);
+      if ($result) {
+        return $this->index();
+      }
+    }
   }
 
   public function delete()

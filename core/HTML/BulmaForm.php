@@ -35,4 +35,18 @@ class BulmaForm extends Form{
     return $this->surround($label . $input);
   }
 
+  public function select1($name, $label, $options){
+    $label = '<label class="label">'. $label .'</label>';
+    $input = '<div class="control"><div class="select is-fullwidth"><select name="'.$name.'">';
+    foreach ($options as $k => $v) {
+      $attr = '';
+      if($k == $this->getValue($name)){
+        $attr = ' selected';
+      }
+      $input .= "<option value='$k'$attr>$v</option>" ;
+    }
+    $input .= '</select></div></div>';
+    return $this->surround($label . $input);
+  }
+
 }

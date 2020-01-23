@@ -24,7 +24,7 @@
   <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
     <ul>
       <li><a href="?p=admin.dashboard.index">Dashboard</a></li>
-      <li class="is-active"><a href="#" aria-current="page">Experiences</a></li>
+      <li class="is-active"><a href="#" aria-current="page">Exp&eacute;riences</a></li>
     </ul>
   </nav>
 
@@ -48,7 +48,7 @@
               <td><?= $experience->libelle; ?></td>
               <td>
                 <a href="#" class="button is-info is-outlined"><i class="fas fa-eye"></i></a>
-                <a href="#" class="button is-warning is-outlined"><i class="fas fa-edit"></i></a>
+                <a href="?p=admin.experiences.edit&id=<?= $experience->id; ?>" class="button is-warning is-outlined"><i class="fas fa-edit"></i></a>
                 <a href="#" class="button is-danger is-outlined"><i class="fas fa-trash"></i></a>
               </td>
             </tr>
@@ -57,7 +57,7 @@
       </table>
     </div>
     <div class="card-footer">
-      <a href="#" class="button is-primary is-outlined" style="margin: auto"><i class="fas fa-plus"></i> Ajouter</a>
+      <a href="?p=admin.experiences.create" class="button is-primary is-outlined" style="margin: auto"><i class="fas fa-plus"></i> Ajouter</a>
     </div>
   </div>
 </section>

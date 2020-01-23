@@ -16,7 +16,7 @@ class DashboardController extends AppController{
     $personnels = $this->Personnel->listOnlyTenPersonnel();
     $categories = $this->Categorie->listOnlyTenCategorie();
     $clients = $this->Client->listOnlyTenClient();
-    $reservations = $this->Reservation->getRes(10);
+    $reservations = $this->Reservation->getLimitRes(10);
     $nbrePersonnels = $this->Personnel->countElt();
     $nbreClients = $this->Client->countElt();
     $nbreRes = $this->Reservation->countElt();
